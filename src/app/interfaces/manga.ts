@@ -2,7 +2,10 @@ export interface Manga {
   id?: string
   type?: 'manga'
   attributes?: {
-    title?: string
+    title?: {
+      en?: string
+      jp?: string
+    }
     altTitles?: string[]
     description?: string
     isLocked?: boolean
