@@ -1,1 +1,20 @@
-<p>manga-page works!</p>
+<div class="info">
+  <h2>{{ manga.attributes?.title?.en }}</h2>
+  <h5>{{ manga.id }}</h5>
+  <div class="sub-info">
+    <span>Last chapter: {{ manga.attributes?.lastChapter }}</span>
+  </div>
+</div>
+
+<div class="volumes-container">
+  <h3>Volumes</h3>
+  <div class="volumes">
+    <div class="vol" *ngFor="let vol of volumes">
+      <button (click)="downloadVolume(vol)">Download</button>
+      <div class="vol-info">
+        <span>Volume: {{ vol.volume }}</span>
+        <span>Chapter count: {{ vol.count }}</span>
+      </div>
+    </div>
+  </div>
+</div>

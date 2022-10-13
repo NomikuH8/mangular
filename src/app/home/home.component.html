@@ -1,5 +1,16 @@
-<form>
+<form (submit)="formOnSubmit($event)">
   <label for="mangaName">Search manga</label>
   <input name="name" id="mangaName" type="text">
   <button type="submit">search</button>
 </form>
+
+<div class="manga-container">
+  <div class="manga" *ngFor="let manga of mangaSearchData">
+    <div class="manga-info">
+      <h3>{{ manga.attributes?.title?.en }}</h3>
+      <span>Year: {{ manga.attributes?.year}}</span>
+      <span>Last Chap.: {{ manga.attributes?.lastChapter}}</span>
+    </div>
+    <button [routerLink]="['manga', manga.id]">Go to manga</button>
+  </div>
+</div>
