@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
+
+.volumes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.volumes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.vol {
+  display: flex;
+  gap: 10px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.vol-info {
+  display: flex;
+  flex-direction: column;
+}

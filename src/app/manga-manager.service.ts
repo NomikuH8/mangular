@@ -1,23 +1,38 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 
-import { Manga } from './model/manga';
+import { SearchReturn } from './interfaces/search-return';
+import { Manga } from './interfaces/manga';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MangaManagerService {
 
-  searchQuery: string = ''
   currentManga: Manga = {}
+  currentSearch: string = ''
+  currentSearchData: Manga[] = []
 
   constructor(private httpClient: HttpClient) { }
 
-  searchManga() {
-    return this.httpClient.get(`${environment.mangadexApiUrl}/manga?${this.searchQuery}`);
+  searchManga(searchQuery: string, page: number) {
+    const limit = environment.mangaPageLimit
+    const offset = limit * page
+
+    return this.httpClient.get<SearchReturn>(`${environment.mangadexApiUrl}/manga?title=${searchQuery}&limit=${limit}&offset=${offset}&order[relevance]=desc`);
   }
 
-  getManga() {
+  getCurSearchData(): Manga[] {
+    return this.currentSearchData
+  }
+
+  // mangaId is uuid-like
+  getManga(mangaId: string) {
+    return this.httpClient.get<any>(`${environment.mangadexApiUrl}/manga/${mangaId}`)
+  }
+
+  getMangaVolumesAndChapters(mangaId: string) {
+    return this.httpClient.get<any>(`${environment.mangadexApiUrl}/manga/${mangaId}/aggregate?translatedLanguage[]=pt-br`)
   }
 }
