@@ -35,6 +35,7 @@ export class MangaPageComponent implements OnInit {
   downloadVolume(vol: Volume): void {
     const chapters: string[] = []
 
-    vol.chapters.forEach((chap: Chapter) => chapters.push(chap.id))
+    Object.values(vol.chapters).map((chap: Chapter) => chapters.push(chap.id))
+    // todo
   }
 }
