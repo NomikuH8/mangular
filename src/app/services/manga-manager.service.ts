@@ -2,8 +2,8 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { SearchReturn } from './interfaces/search-return';
-import { Manga } from './interfaces/manga';
+import { SearchReturn } from '../interfaces/search-return';
+import { Manga } from '../interfaces/manga';
 
 @Injectable({
   providedIn: 'root'

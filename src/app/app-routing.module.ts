@@ -1,7 +1,7 @@
-import { HomeComponent } from './home/home.component'
+import { MangaPageComponent } from './pages/manga-page/manga-page.component'
 import { RouterModule, Routes } from '@angular/router'
-import { NgModule, ɵExtraLocaleDataIndex } from '@angular/core'
-import { MangaPageComponent } from './manga-page/manga-page.component'
+import { HomeComponent } from './pages/home/home.component'
+import { NgModule } from '@angular/core'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

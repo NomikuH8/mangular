@@ -1,7 +1,7 @@
-import { MangaManagerService } from '../manga-manager.service';
-import { SearchReturn } from '../interfaces/search-return';
+import { MangaManagerService } from 'src/app/services/manga-manager.service';
+import { SearchReturn } from '../../interfaces/search-return';
 import { Component, OnInit } from '@angular/core';
-import { Manga } from '../interfaces/manga';
+import { Manga } from '../../interfaces/manga';
 
 @Component({
   selector: 'app-home',

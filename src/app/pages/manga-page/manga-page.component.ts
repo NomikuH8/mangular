@@ -1,8 +1,8 @@
-import { MangaManagerService } from '../manga-manager.service';
+import { MangaManagerService } from 'src/app/services/manga-manager.service';
+import { Chapter, Volume } from '../../interfaces/volume';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Manga } from '../interfaces/manga';
-import { Chapter, Volume } from '../interfaces/volume';
+import { Manga } from '../../interfaces/manga';
 
 @Component({
   selector: 'app-manga-page',
